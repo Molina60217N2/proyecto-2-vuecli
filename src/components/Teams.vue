@@ -1,9 +1,12 @@
 <template>
   <!-- falta el boton para hacer equipos nuevos y estilizar la vista de editar equipo -->
+  <Navbar v-bind:username="this.username" v-bind:userid="this.userid"></Navbar>
   <div class="min-h-screen bg-gray-950 pt-10">
+
+    <router-link :to="'/tasks/' + userid">Ver mis tareas</router-link>
     <h1 class="text-5xl text-center font-bold text-slate-200">Equipos de {{ username }}</h1>
     <!-- <button v-on:click="showparams">Ver params</button> -->
-    <TeamsList v-bind:teamsadmin="teams.teamsadmin" v-bind:teamsb="teams.teamsb" v-bind:userid="userid">
+    <TeamsList v-bind:teamsadmin="teams.teamsadmin" v-bind:teamsb="teams.teamsb" v-bind:userid="userid" v-bind:username="this.username">
     </TeamsList>
     <h3 class="text-2xl mt-10 text-center text-slate-200">Crear un nuevo equipo</h3>
     <div class="grid gap-6 md:grid-cols-2 w-1/3 m-auto mt-10">
@@ -22,14 +25,16 @@
 
 <script>
 import TeamsList from './TeamsList.vue';
+import Navbar from './Navbar.vue';
 export default {
   components: {
-    TeamsList
+    TeamsList, 
+    Navbar
   },
   data() {
     return {
       teams: [],
-      userid: this.$route.params.id,
+      userid: this.$route.params.userid,
       username: this.$route.params.name,
       teamadd: {'name':'', 'description':'', 'userid':''}
     };
@@ -40,7 +45,7 @@ export default {
   methods: {
     fetchTeams() {
       console.log(this.$route.params)
-      fetch(`http://localhost:8000/teams/${this.$route.params.id}`, {
+      fetch(`http://localhost:8000/teams/${this.$route.params.userid}`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
         .then(response => response.json())

@@ -1,4 +1,5 @@
 <template>
+  <Navbar v-bind:username="this.username" v-bind:userid="this.userid"></Navbar>
   <div class="min-h-screen bg-gray-950 pt-10 text-white">
     <h1 class="text-5xl text-center font-bold text-slate-200 capitalize">{{ name }} Team</h1>
     <p class="text-3xl text-center font-bold text-slate-200 mt-10">{{ description }}</p>
@@ -179,14 +180,17 @@
 </template>
 <script>
 import Task from './Task.vue';
+import Navbar from './Navbar.vue'
 
 export default {
   components: {
-    Task
+    Task, 
+    Navbar
   },
 
   data() {
     return {
+      username:'',
       name: '',
       description: '',
       tasks: [],
@@ -228,6 +232,7 @@ export default {
           this.teamusers = data.data.users
           this.tagadd.teamid = data.data.team[0].id
           this.taskadd.teamid = data.data.team[0].id
+          this.username = data.data.username
           console.log(data.data)
         })
     },

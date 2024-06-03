@@ -42,7 +42,8 @@
         .then((data) => {
           if(data.code == 200) {
             console.log(data.data.userid);
-            this.$router.push({ name: 'userteams', params: { id: data.data.userid, name:data.data.username } })
+            this.$emit('setdata', data.data.username, data.data.userid)
+            this.$router.push('/teams/user/' + data.data.userid + '/' + data.data.username)
             
           } else {
             console.log('Fallo');

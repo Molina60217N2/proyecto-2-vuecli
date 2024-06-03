@@ -198,7 +198,7 @@ export default {
         cancelEdit() {
             this.isEditing = false;
             this.resetEditForm();
-        },
+        }, 
         resetEditForm() {
             this.editForm.name = this.name;
             this.editForm.description = this.description;
