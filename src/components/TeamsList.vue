@@ -64,7 +64,7 @@
 </template>
 <script>
 export default {
-    props: ['teamsadmin', 'teamsb', 'userid']
+    props: ['teamsadmin', 'teamsb', 'userid'],
 }
 
 
