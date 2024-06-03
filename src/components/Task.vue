@@ -47,7 +47,7 @@
                 <div class="my-2">
                     <p class="font-semibold text-base mb-2 text-stone-950">Encargado:</p>
                     <div class="flex space-x-2">
-                        <img class="object-center object-cover rounded-full w-6 h-6" src="./user.png"
+                        <img class="object-center object-cover rounded-full w-6 h-6" src="../assets/user.png
                             alt="photo">
                         <p class="text-stone-950">{{ username }}</p>
                     </div>

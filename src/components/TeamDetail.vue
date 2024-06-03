@@ -12,7 +12,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-0">
           <div v-for="teamuser in teamusers" class="bg-none rounded-lg p-4 flex flex-col justify-center items-center">
             <div class="mb-8">
-              <img class="object-center object-cover rounded-full h-36 w-36" src="./user.png" alt="photo">
+              <img class="object-center object-cover rounded-full h-36 w-36" src="../assets/user.png" alt="photo">
             </div>
             <div class="text-center">
               <p class="text-xl text-slate-200 font-bold mb-2">{{ teamuser.username }}</p>
