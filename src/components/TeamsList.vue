@@ -57,10 +57,6 @@
             </div>
         </div>
     </div>
-
-    <div>
-        <router-link v-bind:to="'/team/create/' + userid">Crear nuevo equipo</router-link>
-    </div>
 </template>
 <script>
 export default {

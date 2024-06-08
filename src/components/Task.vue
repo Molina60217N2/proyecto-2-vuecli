@@ -209,7 +209,7 @@ export default {
             this.$emit('edit', this.editForm)
             this.isEditing = false;
             return;
-            fetch('http://localhost:8000/task/update', {
+            fetch('/api/task/update', {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'

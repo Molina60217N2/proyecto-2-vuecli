@@ -92,7 +92,7 @@ import Navbar  from './Navbar.vue';
   methods: {
     fetchTasks() {
       console.log(this.$route.params)
-      fetch(`http://localhost:8000/tasks/user/${this.userid}`, {
+      fetch(`/api/tasks/user/${this.userid}`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
         .then(response => response.json())

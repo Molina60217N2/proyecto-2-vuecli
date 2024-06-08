@@ -26,7 +26,7 @@ export default {
     methods: {
         //create team listo
         createteam() {
-        fetch('http://localhost:8000/team/create', {
+        fetch('/api/team/create', {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

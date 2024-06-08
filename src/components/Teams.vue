@@ -45,7 +45,7 @@ export default {
   methods: {
     fetchTeams() {
       console.log(this.$route.params)
-      fetch(`http://localhost:8000/teams/${this.$route.params.userid}`, {
+      fetch(`/api/teams/${this.$route.params.userid}`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
         .then(response => response.json())
@@ -59,7 +59,7 @@ export default {
     },
     createteam() {
       this.teamadd.userid = this.userid;
-        fetch('http://localhost:8000/team/create', {
+        fetch('/api/team/create', {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

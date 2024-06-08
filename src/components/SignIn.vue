@@ -34,7 +34,7 @@
     },
     methods: {
       register() {
-        fetch('http://localhost:8000/register', {
+        fetch('/api/register', {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

@@ -20,7 +20,7 @@ export default {
     methods: {
         geteam() {
             console.log('cargando equipo')
-            fetch(`http://localhost:8000/team/${this.$route.params.teamid}/${this.$route.params.userid}`, {
+            fetch(`/api/team/${this.$route.params.teamid}/${this.$route.params.userid}`, {
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
         })
         .then(response => response.json())
@@ -34,7 +34,7 @@ export default {
         },
         editteam(){
             let info = {'teamid':this.team.id, 'name':this.team.name, 'description':this.team.description}
-            fetch('http://localhost:8000/team/update', {
+            fetch('/api/team/update', {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

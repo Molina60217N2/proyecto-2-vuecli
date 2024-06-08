@@ -215,7 +215,7 @@ export default {
   methods: {
     fetchTeam() {
       console.log('holaaaa');
-      fetch(`http://localhost:8000/team/${this.$route.params.teamid}/${this.$route.params.userid}`, {
+      fetch(`/api/team/${this.$route.params.teamid}/${this.$route.params.userid}`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
         .then(response => response.json())
@@ -237,7 +237,7 @@ export default {
         })
     },
     fetchtags() {
-      fetch(`http://localhost:8000/team/${this.$route.params.teamid}/tag`, {
+      fetch(`/api/team/${this.$route.params.teamid}/tag`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
         .then(response => response.json())
@@ -247,7 +247,7 @@ export default {
         })
     },
     deleteteam() {
-      fetch('http://localhost:8000/team/delete', {
+      fetch('/api/team/delete', {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -268,7 +268,7 @@ export default {
         });
     },
     fetchusers() {
-      fetch(`http://localhost:8000/team/users`, {
+      fetch(`/api/team/users`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
         .then(response => response.json())
@@ -282,7 +282,7 @@ export default {
       let useraddinfo = { 'userid': this.useridadd, 'teamid': this.teamid }
       // console.log(useraddinfo)
       // return
-      fetch('http://localhost:8000/team/store/user', {
+      fetch('/api/team/store/user', {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -307,7 +307,7 @@ export default {
     },
     addtag() {
       // return
-      fetch('http://localhost:8000/team/tag/create', {
+      fetch('/api/team/tag/create', {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -330,7 +330,7 @@ export default {
     },
     addtask() {
       //falta hacer este formulario
-      fetch('http://localhost:8000/team/store/task', {
+      fetch('/api/team/store/task', {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -363,7 +363,7 @@ export default {
             let deleteinfo = { 'taskid': task_id }
             // console.log(deleteinfo);
             // return;
-            fetch('http://localhost:8000/task/delete', {
+            fetch('/api/task/delete', {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -386,7 +386,7 @@ export default {
         },
     edittask(editinfo){
       // console.log(info)
-      fetch('http://localhost:8000/task/update', {
+      fetch('/api/task/update', {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'

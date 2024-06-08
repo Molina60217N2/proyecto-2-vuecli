@@ -30,7 +30,7 @@
     },
     methods: {
       login() {
-        fetch('http://localhost:8000/login', {
+        fetch('/api/login', {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
